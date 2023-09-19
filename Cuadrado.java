@@ -24,25 +24,10 @@ public class Cuadrado {
         area = Math.pow(lado, 2);
     }
 
-    public double getPerimetro() {
-        return this.perimetro;
-    }
-
-    public double getArea() {
-        return this.area;
-    }
-
     public void listarDatos() {
         System.out.println("Lado del cuadrado: " + lado);
         System.out.println("Área del cuadrado: " + area);
         System.out.println("Perímetro del cuadrado: " + perimetro);
     }
 
-    public static void main(String[] args) {
-        Cuadrado cuadrado = new Cuadrado();
-        cuadrado.leerDatos();
-        cuadrado.calcularArea();
-        cuadrado.calcularPerimetro();
-        cuadrado.listarDatos();
-    }
 }
