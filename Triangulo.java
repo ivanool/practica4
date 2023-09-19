@@ -1,51 +1,51 @@
-package Robot;
 import java.util.Scanner;
 
-public class Triangulo{
-    //Atributos
-    Scanner sc;
-    private float base;
-    private float altura;
-    private float a;
-    private float b;
-    private float c;
-    private float area;
-    private float perimetro;
+public class Triangulo {
+    private double base;
+    private double altura;
+    private double area;
+    private double lado1;
+    private double lado2;
+    private double lado3;
+    private double perimetro;
+    private Scanner scan;
 
-
-    //Constructores
-    Public Triangulo(){
-        sc = new Scanner(System.in);
+    public Triangulo() {
+        scan = new Scanner(System.in);
     }
 
-    //Metodos
-    public void Datos(){
-        System.out.println("Lado a");
-        a = sc.nextFloat();
-         System.out.println("Lado b");
-        b = sc.nextFloat();
-         System.out.println("Lado c");
-        c = sc.nextFloat();
+    public void leerDatos() {
+        System.out.println("Ingrese la longitud del primer lado del triángulo: ");
+        this.lado1 = scan.nextDouble();
+        System.out.println("Ingrese la longitud del segundo lado del triángulo: ");
+        this.lado2 = scan.nextDouble();
+        System.out.println("Ingrese la longitud del tercer lado del triángulo: ");
+        this.lado3 = scan.nextDouble();
 
-        System.out.println("Base");
-        base = sc.nextFloat();
-        System.out.println("Altura");
-        altura = sc.nextFloat();
     }
 
-    public void Perimetro(){
-        perimetro = (float)a + b + c;
+    public void calcularPerimetro() {
+        perimetro = lado1 + lado2 + lado3;
+        this.perimetro = perimetro;
     }
 
-    public void Area(){
-        area = (float)(base * altura)/2;
+    public void calcularArea() {
+        double s = (lado1 + lado2 + lado3) / 2;
+        double area = Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
+        this.area = area;    
     }
 
-    public void (){
-        System.out.println("Area: " + area);
-        System.out.println("Perimetro:  " + perimetro);
+    public double getPerimetro() {
+        return this.perimetro;
+    }
+
+    public double getArea() {
+        return this.area;
+    }
+
+    public void listarDatos() {
+        System.out.println("Lados del triángulo: " + lado1 + ", " + lado2 + ", " + lado3);
+        System.out.println("Área del triángulo: " + this.area);
+        System.out.println("Perímetro del triángulo: " + this.perimetro);
     }
 }
-
-
-

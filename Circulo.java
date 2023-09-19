@@ -1,40 +1,43 @@
 import java.lang.Math;
 import java.util.Scanner;
 
-public class Circulo{
+public class Circulo {
 
-    private float area;
-    private float perimetro;
-    private float radio;
+    private double area;
+    private double perimetro;
+    private double radio;
     private Scanner sc = new Scanner(System.in);
     
-    public void leer_datos(){
+    public void leerDatos(){
         System.out.println("Ingrese el radio del circulo: ");
-        float radio = sc.nextFloat();
+        double radio = sc.nextDouble();
         this.radio = radio;
-        return;
     }
 
-    public void calcular_area(){
-        return;
+    public void calcularArea(){
+        this.area = Math.PI * Math.pow(this.radio, 2);
     }
-    public void calcular_perimetro(){
-        
-        double pi = Math.PI;
-        return;
+    
+    public void calcularPerimetro(){
+        this.perimetro = 2 * Math.PI * this.radio;
     }
 
-    public float get_perimetro(){
-        return this.perimetro;
-    }
-    public float get_area(){
-        return this.perimetro;
-    }
-    public float radio(){
+    public double get_perimetro(){
         return this.perimetro;
     }
     
-    public void listar_datos(){
-
+    public double get_area(){
+        return this.area;
     }
+    
+    public double get_radio(){
+        return this.radio;
+    }
+    
+    public void listarDatos(){
+        System.out.println("Radio del círculo: " + this.radio);
+        System.out.println("Área del círculo: " + this.area);
+        System.out.println("Perímetro del círculo: " + this.perimetro);
+    }
+    
 }
